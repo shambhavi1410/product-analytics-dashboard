@@ -9,6 +9,13 @@ if monthly.empty:
     st.warning("No data for these filters.")
     st.stop()
 
+# Months with very few orders (late 2016) make AOV and growth % look absurd, so hide them
+busy = monthly[monthly.orders >= 100]
+if not busy.empty:
+    monthly = busy.copy()
+    monthly["mom_growth_pct"] = monthly.revenue.pct_change() * 100
+    st.caption("Months with fewer than 100 orders are hidden because tiny volumes distort AOV and growth %.")
+
 a, b = st.columns(2)
 with a:
     st.subheader("Average order value (AOV)")

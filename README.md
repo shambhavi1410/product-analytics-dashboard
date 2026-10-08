@@ -4,6 +4,17 @@ End-to-end product analytics project on an e-commerce dataset (100K+ orders): ra
 
 It answers the questions a product/data analyst gets asked every week: *How is revenue trending? Which categories drive sales? Where do orders drop off? Do customers come back? Who are our best customers?*
 
+## Dashboard preview
+
+![Overview](docs/screenshots/overview.png)
+
+| | |
+|---|---|
+| ![Revenue trends](docs/screenshots/revenue-trends1.png) | ![Delivery and payments](docs/screenshots/revenue-trends2.png) |
+| ![Products](docs/screenshots/products1.png) | ![Product concentration](docs/screenshots/products2.png) |
+| ![Funnel](docs/screenshots/funnel.png) | ![Cohort retention](docs/screenshots/cohort-retention.png) |
+| ![RFM segments](docs/screenshots/rfm-segments1.png) | ![RFM segment details](docs/screenshots/rfm-segments2.png) |
+
 ## Architecture
 
 ```
