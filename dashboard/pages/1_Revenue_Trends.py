@@ -33,6 +33,7 @@ with b:
 
 st.subheader("Delivery performance and satisfaction")
 delivery = fetch("delivery", **f)
+delivery = delivery[delivery.month.isin(monthly.month)]
 a, b, c = st.columns(3)
 a.plotly_chart(px.line(delivery, x="month", y="avg_delivery_days", markers=True, title="Avg delivery days"),
                width="stretch")

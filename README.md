@@ -15,6 +15,30 @@ It answers the questions a product/data analyst gets asked every week: *How is r
 | ![Funnel](docs/screenshots/funnel.png) | ![Cohort retention](docs/screenshots/cohort-retention.png) |
 | ![RFM segments](docs/screenshots/rfm-segments1.png) | ![RFM segment details](docs/screenshots/rfm-segments2.png) |
 
+## Key insights
+
+Based on 96,478 delivered orders (R$ 13.2M revenue, 93,358 customers) from late 2016 to 2018:
+
+- **Growth came from order volume, not bigger baskets.** Monthly revenue rose from R$ 112K in Jan 2017 to roughly R$ 0.85–1M by late 2017, then plateaued. Average order value stayed in a narrow band of roughly R$ 125–152 throughout.
+- **The top 10 categories generate 62% of revenue.** `health_beauty` (9.3%), `watches_gifts` (8.8%) and `bed_bath_table` (7.7%) lead; the top 5 account for 39.8%.
+- **Categories win in different ways.** `bed_bath_table` has the most orders (9,272) at a low average price (R$ 93), while `watches_gifts` earns more revenue (R$ 1.17M vs R$ 1.02M) with about 40% fewer orders (5,495), thanks to a R$ 199 average price.
+- **The order funnel is healthy.** 97.0% of orders reach delivery and 96.4% are reviewed. The largest drop is between approval and shipping (1,623 orders, 1.6%), so that is where operational fixes matter most.
+- **Retention is the weak spot.** Only 3.0% of customers (2,801 of 93,358) ever ordered a second time, and month-1 retention is below 1% in every cohort. The business depends on constantly acquiring new customers.
+- **Most revenue sits with one-time buyers.** "New High-Value" (14,492 customers) and "At Risk (High-Value)" (13,772 customers) together generate R$ 7.7M, or 58% of revenue, from 30% of customers. Repeat buyers (Champions + Loyal) are just 3% of customers and 5.5% of revenue.
+- **Payments and geography.** Credit cards make up 78.5% of payment value and boleto 18%. São Paulo is by far the largest market, followed by RJ and MG.
+
+### Recommendations
+
+1. **Win-back campaign for "At Risk (High-Value)".** These 13,772 customers spent R$ 276 on average but have been inactive for about 14 months, and they account for 29% of revenue. Illustratively, every 1% reactivated is roughly 138 customers, or about R$ 38K at their historical average spend.
+2. **Early-life retention for "New High-Value" customers.** With month-1 retention under 1%, a follow-up offer in the first 30–60 days targets the biggest recent spenders before they lapse.
+3. **Investigate approval-to-shipping losses and late-delivery months**, since both affect satisfaction and cancellations.
+
+### Caveats
+
+- The funnel follows order lifecycle timestamps because the dataset has no click-stream data.
+- Months with fewer than 100 orders (late 2016) are hidden from trend charts, since small volumes distort averages and growth rates.
+- Customers are identified by `customer_unique_id`; recency in the RFM analysis is measured against the newest order in the dataset.
+
 ## Architecture
 
 ```
